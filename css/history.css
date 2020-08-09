@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;700&display=swap');
+:root {
+  --main-color: #01A9B4;
+  --main-text-color: #ffffff;
+  --title-text-color: #707070; 
+}
+
+*{
+	margin: 0px;
+	padding: 0px;
+	/*font-family: sans-serif;*/
+}
+
+.container-summary{
+	display: grid;
+	grid-gap: 10px;
+	position: relative;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) ;
+	grid-template-rows: minmax(250px, 20%);
+}
+
+.conteiner-graphs{
+	display: grid;
+	grid-gap: 10px;
+    padding: 10px;
+	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+
+.titleContent{
+	color: var(--title-text-color);
+	font-family: Roboto Condensed;
+	font-weight: bold;
+	font-size: 20px;
+	text-align: center;
+	margin-top: 5px;
+}
+
+
+#chart-summarySales, #chart-moreSalesDay{
+	position: relative;
+	height: calc(100% - 50px);
+}
+
+
+table thead{
+	background: #67E5ED;
+}
+
+.option-Admin{
+	display: none;
+	position: absolute;
+	margin-top: 40px;
+	background: #fff;
+	border: 1px solid rgba(0,0,0,.3);
+	padding: 5px;
+	border-radius: 5px;
+}
+
+

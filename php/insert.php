@@ -1,33 +1,32 @@
-<?php
-	$temperatura = $_POST["temperatura"];
-	$humedad = $_POST["humedad"];
-	$hora = $_POST["hora"];
+<?php 
 
-	$server = 'localhost';
-	$user = 'root';
-	$password = '';
-	$database = '4liquid';
-	//connection
+$servername = "localhost";
+$username = "id14548731_root";
+$password = "?p972#P6@h9HGRMU";
+$dbname = "id14548731_4liquid";
 
-	$connection = new mysqli($server, $user, $password, $database);
-	//error in connection
-	if ($connection->connect_error) { 
-		echo 'Could not connect to server';
-		die; //end application
-	}
+	$temperatura = $_GET["temperatura"];
+	$humedad = $_GET["humedad"];
+	$peso = $_GET["peso"];
 
-	//query
-	$query= "INSERT INTO temp (id, temperatura, humedad, hora) VALUES (NULL, ".$temperatura.", ".$humedad.",".$hora.")";
 
-	if($connection->query($query) === TRUE){
-		echo '{
-			"temperatura" : "'.$temperatura.'", 
-			"humedad" : "'.$humedad.'",
-			"hora" : "'.$hora.'"
-		}';
-	}else{
-		echo '{"status": "error"}';
-	}
 
-	$connection->close();
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "INSERT INTO ba_nodo1 (ba_id, ba_peso, ba_temperatura, ba_humedad, ba_beerName) VALUES (NULL, ".$peso.", ".$temperatura.", ".$humedad.", 'Barril-3')";
+
+if ($conn->query($sql) === TRUE) {
+  echo "New record created successfully";
+} else {
+  echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+$conn->close();
+
+
 ?>

@@ -1,0 +1,10 @@
+.content-barrels, .content-temp, .content-graphs, .content-summarySales, .content-sales, .graphs{
+	border: 0.8px solid #BAD6D8;
+	border-radius: 20px;
+}
+
+
+.conteiner{
+	margin-left: 190px;
+	padding: 60px 10px;
+}

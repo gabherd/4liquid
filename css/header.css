@@ -1,0 +1,49 @@
+header{
+	background: var(--main-color);
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	width: 100%;
+	z-index: 200;
+}
+
+#btn-navbar{
+	position: absolute;
+	cursor: pointer;
+	left: 20px;
+	display: none;
+}
+
+.txtNamePage{
+	color: var(--main-text-color);
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.user{
+	position: absolute;
+	cursor: pointer;
+	right: 20px;
+}
+
+.content-option-acount{
+	background: #ffffff; 
+	position: absolute; 
+	right: 5px; 
+	margin-top: 5px; z-index: 200; 
+	border: 1px solid #707070; 
+	border-radius: 5px; 
+	box-shadow: 15px 15px 36px -8px rgba(0,0,0,0.46);
+	display: none;
+}
+
+.option-account{
+	padding: 0px 10px;
+	cursor: pointer;
+}
+
+.option-account:hover{
+	background: #707070;
+}

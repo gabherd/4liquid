@@ -1,0 +1,75 @@
+body{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.content-login{
+			padding: 40px 40px 60px 40px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 400px;
+			border-radius: 10px;
+			border: 1px solid #01A9B4;
+		}
+
+		.title-login{
+			font-weight: bold;
+			color: #05AAB5;
+			margin-bottom: 20px;
+		}
+
+		.img-user{
+			height: 100px;
+			width: 100px;
+			margin-bottom: 10px;
+		}
+		
+		#error-password{
+			color: red;
+			margin-bottom: 5px;
+			display: none;
+		}
+
+		.form-control{
+			margin: 5px 0px;
+			background: #F2F2F2;
+		}
+
+		.btn{
+			margin-top: 20px;
+			background: #05AAB5;
+			color: #FFFFFF;
+		}
+
+		a{
+			font-size: 13px;
+		}
+
+
+
+.error{
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}

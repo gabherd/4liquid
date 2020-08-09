@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;700&display=swap');
+:root {
+  --main-color: #01A9B4;
+  --main-text-color: #ffffff;
+  --title-text-color: #707070; 
+}
+
+*{
+	margin: 0px;
+	padding: 0px;
+	/*font-family: sans-serif;*/
+}
+
+.conteiner{
+  grid-gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.titleContent{
+	color: var(--title-text-color);
+	font-family: Roboto Condensed;
+	font-weight: bold;
+	font-size: 20px;
+	text-align: center;
+	margin-top: 5px;
+}
+.raphael-group-17-caption text, .raphael-group-89-caption text{
+	fill: var(--title-text-color) !important;
+	font-size: 20px !important;
+	font-family: Roboto Condensed !important;
+}
+
+.txt-qtyBarrels{
+	color: var(--main-color);
+	font-size: 70px;
+	font-weight: bold;
+	/*color: #FAE96F;
+	color: #F6C101;
+	color: #EC9D00;
+	*/
+}
+
+.content-barrels{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex: 1;
+	min-width: 500px;
+}
+
+.content-temp{
+	display: grid !important;
+	justify-content: center;
+	grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+	flex: 1;
+	min-width: 500px;
+}
+
+.content-graphs{
+	flex: 1 100%;
+}
+
+#chart-temperature-top{
+	border-radius: 20px !important;
+	position: relative;
+}
