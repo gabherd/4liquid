@@ -1,174 +1,35 @@
-*{
-	font-family: quarca;
-}
 body{
-	background: #343434;
-	margin: 0px;
-}
-#header
-{
-    position: relative;
-    float: left;
-    width: 100%;
-    height: 70px;
-    background: #343434;
-    color: white;
-    font-size: 20pt;
-    text-align: center;
-   /* box-shadow: 0px 10px 10px #555;*/
-}
-#header p
-{
-    display: inline-block;
-    margin-top: 0px;
-    margin-right: 2px;
+			background-color: #F1F1F1;
+			margin: 0px;
+			padding: 0px;
+		}	
 
-}
-#logo 
-{
-    display: inline-block;
-    height: 50px;
-    width: 50px;
-    margin: 10px 0 0 0;
-}
-#logo img {
-    height: 100%;
-    width: 100%;
-}
-#center
-{
-    position: relative;
-    float: left;
-    width: 100%;
-    height: auto;
-    text-align: center;
-}
-#menu
-{
-    position: relative;
-    float: left;
-    width: 11%;
-    height: 100%;
-    background: #343434;
-    color: white;
-    font-size: 20pt;
-    margin-left: -1px;
-    text-align: center;
-    /*box-shadow: 0px 10px 10px #555;*/
-}
-#chart{
-	display: inline-block;
-	width:88%;
-	height:600px;
-	background:#343434;
-	border: 1px solid #555;
-	/*box-shadow: 0px 20px 20px #555;*/
-	margin: 20px auto auto auto;
-}
-#chart svg{
-	width: 100%;
-	height:100%;
-}
+		.headTitl{
+			color: #ffffff;
+			margin: auto;
+		    padding: 10px;
+		    font-family: arial;
+		    font-size: 30px;
+		}
 
-.title{
-	
-	font-size: 18pt;
-	fill: #fff;
-	stroke: #fff;
-	stroke-width: 1px;
-	text-anchor: middle;
-}
+		header{
+			background-color: 	#388E3C;
+			height: 50px;
+		}
 
-.axis{
-	stroke: #999;
-	stroke-width: 1px;	
-}
-
-.yaxis{
-	font-size:12pt;
-	fill:#999;
-	text-anchor: end;
-}
-.column{
-	fill:#CCC;
-	stroke:#999;
-	stroke-width: 1px;
-}
-.value{
-	font-size:18pt;
-	fill:#999;
-	text-anchor: middle;
-}
-
-.time{
-	font-size:12pt;
-	fill:#999;
-	text-anchor: middle;
-}
-#chart2{
-	display: inline-block;
-	width:88%;
-	height:600px;
-	background:#343434;
-	border: 1px solid #555;
-	/*box-shadow: 0px 20px 20px #555;*/
-	margin: 20px auto auto auto;
-}
-#chart2 svg{
-	width: 100%;
-	height:100%;
-}
-#temperature-option
-{
-    position: relative;
-    float: left;
-    width: 100%;
-    border-bottom: 1px solid #fff;
-    cursor: pointer;
-    font-size: 16pt;
-}
-#moisture-option
-{
-    position: relative;
-    float: left;
-    width: 100%;
-    border-bottom: 1px solid #fff;
-    cursor: pointer;
-    font-size: 16pt;
-}
-#temperature-option p
-{
-    position: relative;
-    float: right;
-    width: 80%;
-    height: 40px;
-}
-#moisture-option p
-{
-    position: relative;
-    float: right;
-    width: 80%;
-    height: 40px;
-}
-#logoT
-{
-    position: relative;
-    float: left;
-    width: 16%;
-    margin: 0 0 0 2px;
-}
-#logoT img {
-    width: 100%;
-    margin-top: 0px;
-}
-#logoM
-{
-    position: relative;
-    float: left;
-    width: 16%;
-    margin: 0 0 0 2px;
-}
-#logoM img {
-    width: 100%;
-    margin-top: 60%;
-}
+		.w50{
+			width: calc(50% - 20px);
+			background-color: #ffffff;
+			border-radius: 4px;		
+			margin: 10px;
+			padding: 15px 0;
+		}
+		.title{
+			 font-family: arial;
+			 font-size: 20px;
+		}
+		.shadow{
+			-webkit-box-shadow: 11px 8px 19px -6px rgba(0,0,0,0.75);
+			-moz-box-shadow: 11px 8px 19px -6px rgba(0,0,0,0.75);
+			box-shadow: 11px 8px 19px -6px rgba(0,0,0,0.75);
+		}
