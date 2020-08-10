@@ -14,18 +14,12 @@ int status = WL_IDLE_STATUS;
 char server[] = "192.168.1.70";
 int port = 32000;
 WiFiEspClient client;
-
 unsigned long lastSend;
-float peso = 60;
-float temperature;
-float humidity;
-long previousMillis = 0;
-int num = 0;
-
+float peso, temperature, humidity;
 
 void setup(){
   Serial.begin(9600);
-  dht.begin();
+  lastSend = 0;
 
   WifiSerial.begin(BaudRate);
   WiFi.init(&WifiSerial);
@@ -45,19 +39,10 @@ void setup(){
 
   Serial.println(F("Conexion exitosa con la red wifi"));
   printWifiStatus();
-  Serial.println();
-  Serial.println(F("Iniciando la conexion con el servidor TCP..."));
-  if(client.connect(server, port)){
-    Serial.println(F("conexion establecida!"));
-  }
-  //getSensorValues();
-  lastSend = 0;
 }
 
 void loop(){
-  temperature = random(15,30);
-  humidity = random(20, 70);
-
+  //INICIA - comprueba que el esp8266 este conectado al wifi
   status = WiFi.status();
   if(status != WL_CONNECTED){
     while(status != WL_CONNECTED){
@@ -69,24 +54,44 @@ void loop(){
     }
     Serial.println(F("Connected to AP"));
   }
+
   if(!client.connected()){
     reconnect();
   }
+  //TERMINA - aqui termina la comprobacion del wifi
+///////////////////////////////////////////////////////////////////////////////////////////
 
+
+
+
+
+
+
+  //######################################################3
+  //######################################################3
+  //######################################################3
+  //######################################################3
+  //######################################################3
+  //qui va el codigo de la bascula
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
   //seccion de muestreo de sensores y envio de valores
   if(millis() - lastSend > 2000){
-    //getSensorValues();
-    num++;
     
-    if(num == 10){
-     peso--;
-     num = 0;
-    }
+    
+    
+    peso = 12;  //reemplazar variable
+    temperature = 12;    //reemplazar variable
+    humidity = 12;    //reemplazar variable
 
-    if(peso == 0 ){
-      peso = 60; 
-    }
-    
+
     String payload = "{\"Barril\":" + String(1) + ",\"Peso\":" + String(peso) + ",\"Temperatura\":" + String(temperature) + ",\"Humedad\":" + String(humidity) + "}";
     Serial.println(payload);
 
@@ -107,6 +112,12 @@ void printWifiStatus(){
   IPAddress ip = WiFi.localIP();
   Serial.print(F("Direccion IP: "));
   Serial.println(ip);
+
+  Serial.println();
+  Serial.println(F("Iniciando la conexion con el servidor TCP..."));
+  if(client.connect(server, port)){
+    Serial.println(F("conexion establecida!"));
+  }
 }
 
 void reconnect(){
@@ -120,16 +131,4 @@ void reconnect(){
       delay(2000);
     }
   }
-}
-
-void getSensorValues(){
-  temperature = dht.readTemperature();
-  humidity = dht.readHumidity();
-
-  Serial.print(F("Temperatura = "));
-  Serial.print(temperature);
-  Serial.print(F("*C "));
-  Serial.print(F(" Humedad Relativa = "));
-  Serial.print(humidity);
-  Serial.println(F(" % "));
 }
