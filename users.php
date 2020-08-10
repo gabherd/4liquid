@@ -22,9 +22,6 @@
 	<script src="https://code.highcharts.com/modules/exporting.js"></script>
 	<script src="https://code.highcharts.com/modules/export-data.js"></script>
 	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
-
-
-
 </head>
 	<body>
 		<?php require("header.php"); ?>
@@ -44,11 +41,10 @@
 			      <td>Rodrigo Gonzales</td>
 			      <td>rgigo@gmail.com</td>
 			      <td class="per">Estandar</td>
-			      <td style="display: flex; justify-content: center;">
-					<div class="option-Admin hide ">
-						<div class="option-account">Eliminar</div>
-						<div class="option-account">Cambiar datos</div>
-						<div class="option-account change-permis">Cambiar a administrador</div>
+			      <td style="display: flex; justify-content: center; position: relative;">
+					<div class="card-options option-Admin hide ">
+						<div class="option-card">Eliminar</div>
+						<div class="option-card change-permis">Cambiar a administrador</div>
 					</div>
 			      	<img  style="cursor: pointer;" class="btn-account" src="img/settings.svg" width="20px;"></td>
 			    </tr>

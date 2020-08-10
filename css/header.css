@@ -29,21 +29,15 @@ header{
 }
 
 .content-option-acount{
-	background: #ffffff; 
-	position: absolute; 
 	right: 5px; 
-	margin-top: 5px; z-index: 200; 
-	border: 1px solid #707070; 
-	border-radius: 5px; 
-	box-shadow: 15px 15px 36px -8px rgba(0,0,0,0.46);
-	display: none;
+	margin-top: 5px; 
 }
 
-.option-account{
-	padding: 0px 10px;
+.option-card{
+	padding: 4px 15px;
 	cursor: pointer;
 }
 
-.option-account:hover{
-	background: #707070;
+.option-card:hover{
+	background: #A6F3F8;
 }

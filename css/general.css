@@ -8,3 +8,13 @@
 	margin-left: 190px;
 	padding: 60px 10px;
 }
+
+.card-options{
+	background: #ffffff; 
+	position: absolute; 
+	z-index: 200; 
+	border: 1px solid #707070; 
+	border-radius: 5px; 
+	box-shadow: 15px 15px 36px -8px rgba(0,0,0,0.46);
+	display: none;
+}
