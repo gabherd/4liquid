@@ -8,7 +8,7 @@ var chart_temperature = {
       "type": "gauge",
       "scale-r": {
         "aperture": 200,
-        "values": "0:40:10",
+        "values": "-5:20:5",
         "center": {
           "size": 5,
           "background-color": "#66CCFF #FFCCFF",
@@ -17,20 +17,20 @@ var chart_temperature = {
         "ring": { //Ring with Rules
           "size": 10,
           "rules": [{
-              "rule": "%v >= 0 && %v <= 10",
-              "background-color": "#00B700"
+              "rule": "%v >= -5 && %v <= 0",
+              "background-color": "#9498FF"
             },
             {
-              "rule": "%v >= 10 && %v <= 20",
-              "background-color": "#FFB700"
-            },
-            {
-              "rule": "%v >= 20 && %v <= 30",
+              "rule": "%v >= 0 && %v <= 5",
               "background-color": "#80B700"
             },
             {
-              "rule": "%v >= 30 && %v <= 40",
-              "background-color": "#9498FF"
+              "rule": "%v >= 5 && %v <= 10",
+              "background-color": "#FFB700"
+            },
+            {
+              "rule": "%v >= 15 && %v <= 20",
+              "background-color": "#00B700"
             }
           ]
         }
@@ -41,7 +41,7 @@ var chart_temperature = {
         "background-color": "#000000"
       },
       "series": [{
-        "values": [20]
+        "values": [0]
       }]
 };
 
@@ -49,7 +49,7 @@ var chart_humid = {
       "type": "gauge",
       "scale-r": {
         "aperture": 200,
-        "values": "0:40:10",
+        "values": "-5:20:5",
         "center": {
           "size": 5,
           "background-color": "#66CCFF #FFCCFF",
@@ -58,20 +58,20 @@ var chart_humid = {
         "ring": { //Ring with Rules
           "size": 10,
           "rules": [{
-              "rule": "%v >= 0 && %v <= 10",
-              "background-color": "#00B700"
+              "rule": "%v >= -5 && %v <= 0",
+              "background-color": "#9498FF"
             },
             {
-              "rule": "%v >= 10 && %v <= 20",
-              "background-color": "#FFB700"
-            },
-            {
-              "rule": "%v >= 20 && %v <= 30",
+              "rule": "%v >= 0 && %v <= 5",
               "background-color": "#80B700"
             },
             {
-              "rule": "%v >= 30 && %v <= 40",
-              "background-color": "#9498FF"
+              "rule": "%v >= 5 && %v <= 10",
+              "background-color": "#FFB700"
+            },
+            {
+              "rule": "%v >= 15 && %v <= 20",
+              "background-color": "#00B700"
             }
           ]
         }
@@ -82,24 +82,9 @@ var chart_humid = {
         "background-color": "#000000"
       },
       "series": [{
-        "values": [20]
+        "values": [0]
       }]
 };
-
-//chart_humid.series[0] = { "values": [20] }
-zingchart.render({
-      id: 'chart-temperature',
-      data: chart_temperature,
-      height: "100%",
-      width: "100%"
-});
-
-zingchart.render({
-      id: 'chart-humid',
-      data: chart_humid,
-      height: "100%",
-      width: "100%"
-});
 
 var myChart = new Chart(ctx, {
     type: 'bar',
@@ -141,9 +126,29 @@ var myChart = new Chart(ctx, {
     }
 });
 
+
+//chart_humid.series[0] = { "values": [20] }
+zingchart.render({
+      id: 'chart-temperature',
+      data: chart_temperature,
+      height: "100%",
+      width: "100%"
+});
+
+zingchart.render({
+      id: 'chart-humid',
+      data: chart_humid,
+      height: "100%",
+      width: "100%"
+});
+
+
+
 $(window).ready(()=>{
   MQTTconnect()
 });
+
+
 
 //---------------------Code of socket---------------------
 function onConnect(){
@@ -172,9 +177,35 @@ function onFailure(message){
 function onMessageArrived(msg){
   let data = JSON.parse(msg.payloadString);
   console.log(JSON.parse(msg.payloadString));
-  //ot_msg = "message recived " + msg.payloadString + "<br/>";
   
   chart_temperature.series[0] = { "values": [data.Temperatura] }
+  chart_humid.series[0] = { "values": [data.Humedad] }
+
+  var celcius = data.Temperatura;
+  var farenheit = (data.Temperatura * 9/5) + 32;
+
+  $("#data-temperature").text(''+celcius+'° C | '+farenheit+'° F');
+  $("#data-humid").text(data.Humedad + ' %');
+
+  if (data.Temperatura <= -5) 
+  {
+    $("#description-temp").text("Temperatura fria");
+  }
+  else if(data.Temperatura >= 0 && data.Temperatura <= 5){
+    $("#description-temp").text("Temperatura adecuada");
+  }
+  else if(data.Temperatura >= 5 && data.Temperatura <= 10){
+    $("#description-temp").text("Temperatura fria");
+  }
+  else if(data.Temperatura >= 10 && data.Temperatura <= 15){
+    $("#description-temp").text("Temperatura fria");
+  }
+  else if(data.Temperatura >= 15 && data.Temperatura <= 20){
+    $("#description-temp").text("Baje la termperatura!!");
+  }
+
+  $("#description-hum").text("Humedad adecuada");
+
   zingchart.render({
       id: 'chart-temperature',
       data: chart_temperature,
@@ -182,7 +213,6 @@ function onMessageArrived(msg){
       width: "100%"
   });
 
-  chart_humid.series[0] = { "values": [data.Humedad] }
   zingchart.render({
         id: 'chart-humid',
         data: chart_humid,

@@ -1,6 +1,3 @@
-$(document).click(()=>{
-});
-
 $("#btn-user").click(()=>{
 	if ($(".content-option-acount").hasClass("hide")) {
 		$(".content-option-acount").removeClass("hide");
@@ -13,18 +10,6 @@ $("#btn-user").click(()=>{
 	}
 });
 
-
-$(".btn-account").click(()=>{
-	if ($(".option-Admin").hasClass("hide")) {
-		$(".option-Admin").removeClass("hide");
-		$(".option-Admin").addClass("show");
-		$(".option-Admin").css("display", "block");
-	}else{
-		$(".option-Admin").removeClass("show");
-		$(".option-Admin").addClass("hide");
-		$(".option-Admin").css("display", "none");
-	}
-});
 
 
 var url = window.location.href;
@@ -43,32 +28,6 @@ $("#exit-account").click(()=>{
 
 $("#btn-navbar").click(function(){
 	document.getElementById("btn-navbar").style.width = "250px";
-});
-
-
-$(".change-permis").click(()=>{
-		Swal.fire({
-		  title: 'Cambiar permiso',
-		  text: "Asignar a administrador?",
-		  icon: 'warning',
-		  showCancelButton: true,
-		  confirmButtonColor: '#3085d6',
-		  cancelButtonColor: '#d33',
-		  confirmButtonText: 'Si',
-		  cancelButtonText: 'No'
-		}).then((result) => {
-		  if (result.value) {
-		    Swal.fire(
-		      'Asignado!',
-		      'Se ha cambiado a administrador',
-		      'success'
-		    );
-		   $(".per").text("Administador");
-			$(".option-Admin").removeClass("show");
-			$(".option-Admin").addClass("hide");
-			$(".option-Admin").css("display", "none");
-		  }
-		});
 });
 
 
@@ -92,5 +51,6 @@ $(".background-nav").click(()=>{
 		$(".background-nav").css("width", "0px");
 		openNav = false;
 });
+
 
 

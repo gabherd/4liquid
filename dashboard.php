@@ -34,13 +34,21 @@
 				<div class="txt-qtyBarrels">09</div>
 			</div>
 			<div class="content-temp">
-				<div class="sW"> 
+				<div class="sW" style="position: relative;"> 
 					<div class="titleContent">Temperatura</div>
-	 				<div style="width: 100%; height: 200px;" id='chart-temperature'></div>
+	 				<div style="width: 100%; height: 200px; " id='chart-temperature'></div>
+	 				<div style="bottom: 15px; position: absolute;  width: 100%; display: flex;  flex-direction: column; text-align: center;">
+	 					<div class="" style="color: var(--title-text-color)"><b id="data-temperature">0° C | 0° F</b></div>
+	 					<div id="description-temp" style="font-size: 13px; color: #848484">Temperatura adecuada</div>
+	 				</div>
 				</div>
-				<div>
+				<div style="position: relative;">
 					<div class="titleContent">Humedad</div>
 					<div style="width: 100%; height: 200px;" id="chart-humid"></div>
+					<div style="bottom: 15px; position: absolute;  width: 100%; display: flex;  flex-direction: column; text-align: center;">
+	 					<div class="" style="color: var(--title-text-color)"><b id="data-humid">0 %</b></div>
+	 					<div id="description-hum" style="font-size: 13px; color: #848484">Humedad adecuada</div>
+	 				</div>
 				</div>
 			</div>
 			<div class="content-graphs">

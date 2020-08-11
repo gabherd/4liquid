@@ -48,13 +48,16 @@ table thead{
 }
 
 .option-Admin{
+	background: #ffffff; 
+	position: absolute; 
+	right: 50%;
+	top: 20px;
+	margin-top: 5px; 
+	z-index: 200; 
+	border: 1px solid #707070; 
+	border-radius: 5px; 
+	box-shadow: 15px 15px 36px -8px rgba(0,0,0,0.46);
 	display: none;
-	position: absolute;
-	margin-top: 40px;
-	background: #fff;
-	border: 1px solid rgba(0,0,0,.3);
-	padding: 5px;
-	border-radius: 5px;
 }
 
 
