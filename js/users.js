@@ -116,6 +116,7 @@ $(".conteiner").delegate(".delete-user", "click", function(){
 						      'El usuario se ha <b>eliminado</b> correctamente',
 						      'success'
 						    );
+						    dataTable.ajax.reload();
 				        }else{
 							alert(datos.detail);
 				        }
