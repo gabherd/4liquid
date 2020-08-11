@@ -1,9 +1,10 @@
 <?php 
+<?php 
 
 $servername = "localhost";
-$username = "id14548731_root";
-$password = "?p972#P6@h9HGRMU";
-$dbname = "id14548731_4liquid";
+$username = "root";
+$password = "";
+$dbname = "4liquid";
 
 	$temperatura = $_GET["temperatura"];
 	$humedad = $_GET["humedad"];

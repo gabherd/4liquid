@@ -6,7 +6,7 @@
 	$dataDay = [];
 
 
-	$qry_salesBeer = "SELECT DISTINCT ba_beerName AS name FROM ba_nodo1";
+	$qry_salesBeer = "SELECT DISTINCT ba_beerName AS name FROM ba_nodo1 ORDER BY name";
 	$result = $mysqli->query($qry_salesBeer);
 	$row = mysqli_num_rows($result);
 

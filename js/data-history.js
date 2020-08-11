@@ -43,8 +43,7 @@ function sales(){
         data:{incio: 1, fin: 2}, 
         success:function(data){ 
           data = JSON.parse(data);
-        
-          data.forEach((beer)=>{
+          data.forEach((beer, index)=>{
               var day = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"];
               var qty = [];
 
@@ -63,9 +62,13 @@ function sales(){
                   });
 
               });
+
               graphsWeek(beerSales, day, qty);
+
+              if (index == (data.length-1)) {
+                graphs();
+              };
           });
-          graphs();
         }
     });
 }

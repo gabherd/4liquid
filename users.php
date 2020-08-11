@@ -22,12 +22,34 @@
 	<script src="https://code.highcharts.com/modules/exporting.js"></script>
 	<script src="https://code.highcharts.com/modules/export-data.js"></script>
 	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
 </head>
 	<body>
 		<?php require("header.php"); ?>
 		<?php require("navbar.php"); ?>
 		<div class="conteiner">
-			<table class="table">
+			<table id="table_id" class="display table">
+			    <thead>
+			        <tr>
+			            <th scope="col">Nombre</th>
+					    <th scope="col">Correo</th>
+					    <th scope="col">Nivel</th>
+					    <th scope="col">Acciones</th>
+			        </tr>
+			    </thead>
+			    <tbody>
+			        <tr>
+			            <td>Cargando...</td>
+			            <td>Cargando...</td>
+			            <td>Cargando...</td>
+			            <td>Cargando...</td>
+			        </tr>
+			    </tbody>
+			</table>
+
+			<!--table class="table">
 			  <thead class="">
 			    <tr>
 			      <th scope="col">Nombre</th>
@@ -61,11 +83,12 @@
 			      <td style="display: flex; justify-content: center;"><img src="img/settings.svg" width="20px;"></td>
 			    </tr>
 			  </tbody>
-			</table>
+			</table--->
 		</div>
     	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
     	 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 		<script src="js/functions.js"></script>
+		<script src="js/users.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 	</body>
 </html>
