@@ -176,7 +176,6 @@ function onFailure(message){
 
 function onMessageArrived(msg){
   let data = JSON.parse(msg.payloadString);
-  console.log(JSON.parse(msg.payloadString));
   
   chart_temperature.series[0] = { "values": [data.Temperatura] }
   chart_humid.series[0] = { "values": [data.Humedad] }
@@ -219,6 +218,7 @@ function onMessageArrived(msg){
         height: "100%",
         width: "100%"
   });
+
 
   myChart.data.datasets[0].data[0] = data.Peso;
   myChart.update();

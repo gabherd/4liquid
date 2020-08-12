@@ -3,12 +3,12 @@
 	<div class="nav">
 		<a href="dashboard.php"> 
 			<div class="menu-pages">
-				<img class="img-menuOptions" src="img/berr.png">General
+				<img class="img-menuOptions" src="img/berr.png">Actual
 			</div>
 		</a>
 		<a href="history.php">
 			<div class="menu-pages">
-				<img class="img-menuOptions" src="img/reporte.svg">Barriles
+				<img class="img-menuOptions" src="img/reporte.svg">Historial
 			</div>
 		</a>
 		<!--a href="#">

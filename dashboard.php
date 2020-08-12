@@ -20,6 +20,7 @@
   <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
 		<script type="text/javascript" src="js/mqttws31.js"></script>
 
+    	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 
 	<link rel="stylesheet" href="css/dashboard.css">
 	<link rel="stylesheet" href="css/general.css">
@@ -34,20 +35,20 @@
 				<div class="txt-qtyBarrels">09</div>
 			</div>
 			<div class="content-temp">
-				<div class="sW" style="position: relative;"> 
+				<div class="position-relative"> 
 					<div class="titleContent">Temperatura</div>
-	 				<div style="width: 100%; height: 200px; " id='chart-temperature'></div>
-	 				<div style="bottom: 15px; position: absolute;  width: 100%; display: flex;  flex-direction: column; text-align: center;">
+	 				<div id='chart-temperature'></div>
+	 				<div class="content-descriptionTemHum">
 	 					<div class="" style="color: var(--title-text-color)"><b id="data-temperature">0° C | 0° F</b></div>
-	 					<div id="description-temp" style="font-size: 13px; color: #848484">Temperatura adecuada</div>
+	 					<div id="description-temp">Temperatura adecuada</div>
 	 				</div>
 				</div>
-				<div style="position: relative;">
+				<div class="position-relative">
 					<div class="titleContent">Humedad</div>
-					<div style="width: 100%; height: 200px;" id="chart-humid"></div>
-					<div style="bottom: 15px; position: absolute;  width: 100%; display: flex;  flex-direction: column; text-align: center;">
+					<div id="chart-humid"></div>
+					<div class="content-descriptionTemHum">
 	 					<div class="" style="color: var(--title-text-color)"><b id="data-humid">0 %</b></div>
-	 					<div id="description-hum" style="font-size: 13px; color: #848484">Humedad adecuada</div>
+	 					<div id="description-hum">Humedad adecuada</div>
 	 				</div>
 				</div>
 			</div>
@@ -56,7 +57,6 @@
 				<canvas id="myChart" width="100" height="30"></canvas>
 			</div>
 		</div>
-    	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 		<script type="text/javascript" src="js/functions.js"></script>
 	    <script type="text/javascript" src="js/data-dashboard.js"></script>
 	</body>

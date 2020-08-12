@@ -61,7 +61,32 @@
 	flex: 1 100%;
 }
 
+.content-descriptionTemHum{
+	position: absolute;  
+	width: 100%; 
+	display: flex;  
+	flex-direction: column; 
+	text-align: center; 
+	text-align: center; 
+	background: #fff; 
+	padding-bottom: 15px; 
+	bottom: 0px; 
+	border-radius: 20px;
+}
+
+#description-hum, #description-temp{
+	font-size: 13px; 
+	color: #848484;
+}
+
+#chart-temperature, #chart-humid{
+	width: 100%; 
+	height: 200px;
+}
+
 #chart-temperature-top{
 	border-radius: 20px !important;
 	position: relative;
 }
+
+
