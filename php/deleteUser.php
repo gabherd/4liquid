@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	require("../connection.php");
+	require("connection.php");
 
 	$id = $_POST['id'];
 	$users = [];
