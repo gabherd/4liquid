@@ -8,9 +8,9 @@ var chart_temperature = {
       "type": "gauge",
       "scale-r": {
         "aperture": 200,
-        "values": "-5:20:5",
+        "values": "-5:40:5",
         "center": {
-          "size": 5,
+          "size": 10,
           "background-color": "#66CCFF #FFCCFF",
           "border-color": "none"
         },
@@ -21,15 +21,15 @@ var chart_temperature = {
               "background-color": "#9498FF"
             },
             {
-              "rule": "%v >= 0 && %v <= 5",
+              "rule": "%v >= 0 && %v <= 10",
               "background-color": "#80B700"
             },
             {
-              "rule": "%v >= 5 && %v <= 10",
+              "rule": "%v >= 10 && %v <= 30",
               "background-color": "#FFB700"
             },
             {
-              "rule": "%v >= 15 && %v <= 20",
+              "rule": "%v >= 30 && %v <= 40",
               "background-color": "#00B700"
             }
           ]
@@ -49,7 +49,7 @@ var chart_humid = {
       "type": "gauge",
       "scale-r": {
         "aperture": 200,
-        "values": "-5:20:5",
+        "values": "0:100:5",
         "center": {
           "size": 5,
           "background-color": "#66CCFF #FFCCFF",
@@ -58,20 +58,20 @@ var chart_humid = {
         "ring": { //Ring with Rules
           "size": 10,
           "rules": [{
-              "rule": "%v >= -5 && %v <= 0",
-              "background-color": "#9498FF"
+              "rule": "%v >= 0 && %v <= 30",
+              "background-color": "#00B700"
             },
             {
-              "rule": "%v >= 0 && %v <= 5",
-              "background-color": "#80B700"
-            },
-            {
-              "rule": "%v >= 5 && %v <= 10",
+              "rule": "%v >= 30 && %v <= 60",
               "background-color": "#FFB700"
             },
             {
-              "rule": "%v >= 15 && %v <= 20",
-              "background-color": "#00B700"
+              "rule": "%v >= 60 && %v <= 80",
+              "background-color": "#80B700"
+            },
+            {
+              "rule": "%v >= 80 && %v <= 100",
+              "background-color": "#9498FF"
             }
           ]
         }
