@@ -156,6 +156,7 @@ function onConnect(){
   mqtt.subscribe("instalacion1/seccion1/barril/1");
 }
 
+//{"Temperatura": 20, "Humedad": 29, "Peso": 21}
 function MQTTconnect(){
   mqtt = new Messaging.Client("broker.mqttdashboard.com", 8000, "myclientid_" + parseInt(Math.random()*100, 10));
   //document.write("connecting to " + hots);

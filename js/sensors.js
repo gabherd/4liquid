@@ -38,6 +38,29 @@ $.ajax({
         success:function(data){ 
         	data = JSON.parse(data);
           	data.forEach((beer, index)=>{
+          		if ((data.length-1) == index) {
+          			$(".conteiner").append('<div id="'+index+'" class="content-barrel">'+
+					'<div style="text-align: center;">'+
+						'<div class="titleContent">Barril-'+(index+1)+'</div>'+
+						'<div></div>'+
+					'</div>'+
+					'<div style="display: flex;">'+
+						'<div style="margin: 10px 20px 10px 0px">'+
+							'<img class="img-barrel" style="opacity: .2" src="img/barriles.svg">'+
+						'</div>'+
+						'<div class="content-statuBarrel">'+
+							'<div>'+
+								'<img class="img-status" src="img/circle-red.svg"> Inactivo'+
+							'</div>'+
+							'<div>Tipo de cerveza '+(index+1)+'</div>'+
+						'</div>'+
+					'</div>'+
+					'<div class="content-changeStatus">'+
+						'<button class="btn btn-success btn-statusSensor" style="visibility: hidden;">Activar</button>'+
+					'</div>'+
+				'</div>');
+          		}else{
+
           		$(".conteiner").append('<div id="'+index+'" class="content-barrel">'+
 					'<div style="text-align: center;">'+
 						'<div class="titleContent">Barril-'+(index+1)+'</div>'+
@@ -51,13 +74,14 @@ $.ajax({
 							'<div>'+
 								'<img class="img-status" src="img/circle-green.svg"> Activo'+
 							'</div>'+
-							'<div>Tipo de cerveza</div>'+
+							'<div>Tipo de cerveza '+(index+1)+'</div>'+
 						'</div>'+
 					'</div>'+
 					'<div class="content-changeStatus">'+
 						'<button class="btn btn-danger btn-statusSensor" style="visibility: hidden;">Descativar</button>'+
 					'</div>'+
 				'</div>');
+          		}
           	});
         }
 });
