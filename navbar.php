@@ -21,6 +21,11 @@
 				<img class="img-menuOptions" src="img/USERS.png">Usuarios
 			</div>
 		</a>
+		<a href="sensors.php">
+			<div class="menu-pages">
+				<img class="img-menuOptions" src="img/pub.svg">Barriles
+			</div>
+		</a>
 	</div>
 <div class="background-nav">
 

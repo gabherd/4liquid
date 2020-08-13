@@ -1,0 +1,39 @@
+.conteiner{
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
+}
+
+.content-barrel{
+	border:solid  1px #BAD6D8; 
+	border-radius: 20px; 
+	padding: 5px;
+}
+
+
+.img-barrel{
+	width: 100px; 
+	height: 100px;
+}
+
+.img-status{
+	width: 15px; 
+	height: 100%;
+}
+
+.content-statuBarrel{
+	width: 100%; 
+	margin-left: 10px; 
+	display: flex; 
+	align-content: center; 
+	flex-direction: column; 
+	justify-content: center;
+}
+
+.content-changeStatus{
+	display: flex; 
+	justify-content: center; 
+	margin-bottom: 5px;
+}
+
+
