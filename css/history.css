@@ -55,5 +55,6 @@ table thead{
 
 
 .highcharts-container{
-    border-radius: 50px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
