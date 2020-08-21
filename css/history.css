@@ -54,3 +54,6 @@ table thead{
 }
 
 
+.highcharts-container{
+    border-radius: 50px;
+}
