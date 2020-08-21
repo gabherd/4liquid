@@ -2,7 +2,7 @@
 	session_start();
 	error_reporting(0);
 	require_once("php/connection.php");
-	$uID = $_SESSION['uID'];
+	$uID = $_SESSION['uID']; 
 	require("php/valiOnlyUser.php");
 ?>
 <html>

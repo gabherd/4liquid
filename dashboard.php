@@ -17,10 +17,10 @@
     <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
     <!-- Step 2 - Include the fusion theme -->
     <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
-  <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
-		<script type="text/javascript" src="js/mqttws31.js"></script>
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+	<script type="text/javascript" src="js/mqttws31.js"></script>
 
-    	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 
 	<link rel="stylesheet" href="css/dashboard.css">
 	<link rel="stylesheet" href="css/general.css">

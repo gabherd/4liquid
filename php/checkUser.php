@@ -5,13 +5,14 @@
 	$us_email = $_POST['email'];
 	$us_password = $_POST['password'];
 
-	$query = "SELECT id FROM user WHERE email = '".$us_email."' and password = '".$us_password."';";
+	$query = "SELECT id, admin FROM user WHERE email = '".$us_email."' and password = '".$us_password."';";
 	$result = $mysqli->query($query);
 	$row = $result->fetch_assoc();
 
 	if($query){
 		if ($row['id']>0) {
 				$_SESSION['uID'] = $row['id'];
+				$_SESSION['access'] = $row['admin'];
 				echo '{"status": 1}';
 		}
 		else

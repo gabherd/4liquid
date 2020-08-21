@@ -25,12 +25,18 @@ $(".conteiner").delegate(".btn-statusSensor", "click", function(){
 				'Actualizado',
 			  	'El barril se ha <b>actualizado</b> correctamente',
 			  	'success'
-			);	   		
+			);	 
+			MQTTconnect();
+			if (messageTopic) {
+				messageTopic = 0;
+			}else{
+				messageTopic = 1;
+			}
 		}
 	});
 });
 
-
+/*
 $.ajax({
         type:"POST", 
         url:"php/dashboard/getBarrels.php", 
@@ -78,10 +84,40 @@ $.ajax({
 						'</div>'+
 					'</div>'+
 					'<div class="content-changeStatus">'+
-						'<button class="btn btn-danger btn-statusSensor" style="visibility: hidden;">Descativar</button>'+
+						'<button class="btn btn-danger btn-statusSensor" style="visibility: hidden;">Desactivar</button>'+
 					'</div>'+
 				'</div>');
           		}
           	});
         }
 });
+*/
+
+
+//---------------------Code of socket---------------------
+
+MQTTconnect();
+
+var mqtt;
+var reconnectTimeout = 2000;
+var host = "broker.mqttdashboard.com";
+var port = 8000;
+var messageTopic = 0;
+
+function onConnect(){
+	messa = new Messaging.Message(""+messageTopic+"");
+	messa.destinationName = 'barril/status/1';
+	mqtt.send(messa);
+}
+//hola
+function MQTTconnect(){
+	mqtt = new Messaging.Message("broker.mqttdashboard.com", 8000, "myclientid_" + parseInt(Math.random()*100, 10));
+	var options = {
+		timeout : 3,
+		onSuccess: onConnect
+	};
+
+	mqtt.connect(options);
+}
+
+

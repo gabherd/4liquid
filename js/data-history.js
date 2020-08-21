@@ -47,11 +47,19 @@ function sales(){
               var day = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"];
               var qty = [];
 
-              $(".conteiner-graphs").append("<div class='graphs'><div class='titleContent'>"+beer[0].name+"</div> <canvas id='chart-beer"+beer[0].name+"' width='100%' height='35'></canvas> </div>")
-              var beerSales = document.getElementById('chart-beer'+beer[0].name).getContext('2d');
+              //$(".conteiner-graphs").append("<div class='graphs'><div class='titleContent'>"+beer[0].name+"</div> <canvas id='chart-beer"+beer[0].name+"' width='100%' height='35'></canvas> </div>")
+              //var beerSales = document.getElementById('chart-beer'+beer[0].name).getContext('2d');
               
+              $(".conteiner-graphs").append(
+              '<div class="graphs">'+
+                '<figure class="highcharts-figure" >'+
+                    '<div id="container'+beer[0].name+'"></div>'+
+                '</figure>')+
+              '</div>';
+
               beer.forEach((date)=>{
                   qty[day.indexOf(date.date)] = date.qty;
+
 
                   salesPerWeek.forEach((obj, index)=>{
                     if (date.date == obj.name) {
@@ -60,10 +68,16 @@ function sales(){
                     };
 
                   });
-
               });
 
-              graphsWeek(beerSales, day, qty);
+
+              for (var i = qty.length - 1; i >= 0; i--) {
+                if (qty[i] == null) {
+                  qty[i] = 0;
+                };
+              };
+
+              graphsWeek(beer[0].name, day, qty);
 
               if (index == (data.length-1)) {
                 graphs();
@@ -102,7 +116,7 @@ function graphs(){
           }
       ],
       exporting: {
-        enabled: false
+        enabled: true
       }
   });
 
@@ -151,52 +165,45 @@ function graphs(){
         series: salesPerDay
     },
     exporting: {
-      enabled: false
+      enabled: true
     }
   });
 }
 
-function graphsWeek(beerSales, day, qty){
-    var sales = new Chart(beerSales, {
-      type: 'bar',
-      data: {
-          labels: day,
-          datasets: [{
-              label: '',
-              data: qty,
-              backgroundColor: [
-                  'rgb(255, 99, 132)',
-                  'rgb(54, 162, 235)',
-                  'rgb(255, 206, 86)',
-                  'rgb(75, 192, 192)',
-                  'rgb(153, 102, 255)',
-                  'rgb(255, 159, 64)'
-              ],
-              borderColor: [
-                  'rgb(255, 99, 132)',
-                  'rgb(54, 162, 235)',
-                  'rgb(255, 206, 86)',
-                  'rgb(75, 192, 192)',
-                  'rgb(153, 102, 255)',
-                  'rgb(255, 159, 64)'
-              ],
-              borderWidth: 1
-          }]
-      },
-      options: {
-          legend: {
-              display: false
+function graphsWeek(beerName, day, qty){
 
-          },
-          scales: {
-              yAxes: [{
-                  ticks: {
-                      beginAtZero: true,
-                      min: 0,
-                      stepSize: 1
-                  }
-              }]
-          }
-      }
-  });
+  Highcharts.chart('container'+beerName, {
+    chart: {
+        height: 200,
+        type: 'line'
+    },
+    title: {
+        text: '<div class="titleContent">'+beerName+'</div>',
+        style: {
+            color: '#707070',
+            fontWeight: 'bold',
+        }
+    },
+    xAxis: {
+        categories: day
+    },
+    yAxis: {
+    },
+
+    tooltip: {  
+        formatter: function () {
+            return '<b>Ventas</b><br/>' +
+                this.x + ': ' + this.y;
+        }
+    },
+    plotOptions: {
+    },
+    series: [{
+        data: qty,
+        showInLegend: false
+    }]
+});
+
+
+    
 }

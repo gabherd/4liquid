@@ -25,12 +25,15 @@
 
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
 	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+
+	<script type="text/javascript" src="js/mqttws31.js"></script>
+
 </head>
 	<body>
 		<?php require("header.php"); ?>
 		<?php require("navbar.php"); ?>
 		<div class="conteiner">
-				<!--div id="aas" class="content-barrel">
+				<div id="aas" class="content-barrel">
 					<div style="text-align: center;">
 						<div class="titleContent">Barril-1</div>
 						<div></div>
@@ -49,7 +52,67 @@
 					<div class="content-changeStatus">
 						<button class="btn btn-danger btn-statusSensor" style="visibility: hidden;">Descativar</button>
 					</div>
-				</div-->
+				</div>
+				<div id="" class="content-barrel">
+					<div style="text-align: center;">
+						<div class="titleContent">Barril-2</div>
+						<div></div>
+					</div>
+					<div style="display: flex;">
+						<div style="margin: 10px 20px 10px 0px">
+							<img class="img-barrel" src="img/barriles.svg">
+						</div>
+						<div class="content-statuBarrel">
+							<div>
+								<img class="img-status" src="img/circle-red.svg"> Inactivo
+							</div>
+							<div>Tipo de cerveza</div>
+						</div>
+					</div>
+					<div class="content-changeStatus">
+						<button class="btn btn-danger btn-statusSensor" style="visibility: hidden;">Descativar</button>
+					</div>
+				</div>
+				<div id="" class="content-barrel">
+					<div style="text-align: center;">
+						<div class="titleContent">Barril-3</div>
+						<div></div>
+					</div>
+					<div style="display: flex;">
+						<div style="margin: 10px 20px 10px 0px">
+							<img class="img-barrel" src="img/barriles.svg">
+						</div>
+						<div class="content-statuBarrel">
+							<div>
+								<img class="img-status" src="img/circle-red.svg"> Inactivo
+							</div>
+							<div>Tipo de cerveza</div>
+						</div>
+					</div>
+					<div class="content-changeStatus">
+						<button class="btn btn-danger btn-statusSensor" style="visibility: hidden;">Descativar</button>
+					</div>
+				</div>
+				<div id="" class="content-barrel">
+					<div style="text-align: center;">
+						<div class="titleContent">Barril-4</div>
+						<div></div>
+					</div>
+					<div style="display: flex;">
+						<div style="margin: 10px 20px 10px 0px">
+							<img class="img-barrel" src="img/barriles.svg">
+						</div>
+						<div class="content-statuBarrel">
+							<div>
+								<img class="img-status" src="img/circle-red.svg"> Inactivo
+							</div>
+							<div>Tipo de cerveza</div>
+						</div>
+					</div>
+					<div class="content-changeStatus">
+						<button class="btn btn-danger btn-statusSensor" style="visibility: hidden;">Descativar</button>
+					</div>
+				</div>
 				
 				
     	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>

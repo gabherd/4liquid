@@ -171,7 +171,6 @@ function MQTTconnect(){
 }
 
 function onFailure(message){
-  alert("Se perdió la conexión con los sensores");
   setTimeout(MQTTconnect, reconnectTimeout);
 }
 
@@ -228,19 +227,12 @@ function onMessageArrived(msg){
 }
 
 
-var val1 = 10;
-var val2 = 10;
-var val3 = 10;
-var val4 = 10;
-var val5 = 10;
+  var val1 = 10;
+  var val2 = 10;
+  var val3 = 10;
+  var val4 = 10;
+  var val5 = 10;
 
-  setInterval(()=>{
-      
-      if (val1 < 1 ) { val1 = 10};
-      if (val2 < 1 ) { val2 = 10};
-      if (val3 < 1 ) { val3 = 10};
-      if (val4 < 1 ) { val4 = 10};
-      if (val5 < 1 ) { val5 = 10};
 
       myChart.data.datasets[0].data[1] = val1;
       myChart.data.datasets[0].data[2] = val2;
@@ -253,5 +245,5 @@ var val5 = 10;
       val4 = val4 - Math.random(0, 4);
 
       myChart.update();
-  }, 2000);
+
   //myChart.data.datasets[0].data[0] = 23
