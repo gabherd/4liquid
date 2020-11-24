@@ -1,3 +1,4 @@
+/*
 var ctx = document.getElementById('myChart').getContext('2d');
 
 var days = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
@@ -71,3 +72,5 @@ var myChart = new Chart(ctx, {
         }]
     }
 });
+
+*/

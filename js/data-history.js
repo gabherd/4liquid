@@ -170,6 +170,7 @@ function graphs(){
   });
 }
 
+//crea grafica por cerveza sobre la cantidad de ventas realizadas por dia
 function graphsWeek(beerName, day, qty){
 
   Highcharts.chart('container'+beerName, {
